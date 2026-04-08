@@ -496,7 +496,7 @@
             transform: translate(-50%, -50%);
             border: 2px solid #1A6FD4;
             border-radius: 50%;
-            opacity: 0;
+            opacity: 1;
             animation: radar-pulse 3s infinite;
         }
         
@@ -532,14 +532,14 @@
         
         @keyframes radar-pulse {
             0% {
-                opacity: 0;
+                opacity: 1;
                 transform: translate(-50%, -50%) scale(0.5);
             }
             50% {
-                opacity: 0.6;
+                opacity: 1.6;
             }
             100% {
-                opacity: 0;
+                opacity: 1;
                 transform: translate(-50%, -50%) scale(2);
             }
         }
