@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BL Caminhão Pipa - Soluções rápidas e eficientes para falta d'água no Rio de Janeiro e região. Atendimento 24h para obras, piscinas, residências e empresas.">
-    <meta name="keywords" content="caminhão pipa, água potável, abastecimento de água, falta d'água, Rio de Janeiro, RJ, obras, piscinas, caixa d'água, emergência, BL Caminhão Pipa">
-    <title>BL Caminhão Pipa - Água Potável para Rio de Janeiro e Região</title>
+    <title>BL Caminhão Pipa - Abastecimento de Água no Rio de Janeiro</title>
+    <meta name="description" content="Ficou sem água? A BL Caminhão Pipa oferece abastecimento rápido e seguro de água potável para residências, condomínios e obras no Rio de Janeiro e região metropolitana. Atendimento 24h.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Barlow:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        /* --- CONFIGURAÇÕES GLOBAIS E VARIÁVEIS --- */
         :root {
             --bg-dark: #08090C;
-            --blue-primary: #1A6FD4;
-            --blue-light: #4D9FFF;
-            --white-light: #F2F4F8;
-            --text-color: #F2F4F8;
-            --star-yellow: #FFD700;
-            --font-heading: 'Barlow Condensed', sans-serif;
+            --primary-blue: #1A6FD4;
+            --light-blue: #4D9FFF;
+            --text-light: #F2F4F8;
+            --star-yellow: #F5C542;
+            --border-color: rgba(77, 159, 255, 0.2);
+            --font-title: 'Barlow Condensed', sans-serif;
             --font-body: 'Barlow', sans-serif;
         }
 
@@ -32,63 +32,75 @@
         }
 
         body {
-            font-family: var(--font-body);
-            color: var(--text-color);
             background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            font-size: 16px;
             line-height: 1.6;
         }
 
         .container {
-            max-width: 1200px;
+            width: 100%;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
-        a {
-            text-decoration: none;
-            color: var(--blue-light);
+        section {
+            padding: 80px 0;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-            color: var(--white-light);
-            line-height: 1.2;
-            margin-bottom: 0.8em;
+        h1, h2, h3 {
+            font-family: var(--font-title);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
         }
-
-        h1 { font-size: 3.5em; }
-        h2 { font-size: 2.8em; }
-        h3 { font-size: 2.2em; }
-        h4 { font-size: 1.8em; }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        h2 span {
+            color: var(--primary-blue);
+        }
 
         .btn {
             display: inline-block;
-            background-color: var(--blue-primary);
-            color: var(--white-light);
-            padding: 15px 30px;
-            border-radius: 8px;
+            padding: 15px 35px;
+            font-family: var(--font-title);
+            font-size: 1.2rem;
             font-weight: 600;
             text-transform: uppercase;
-            transition: background-color 0.3s ease;
-            font-family: var(--font-heading);
-            font-size: 1.1em;
-            letter-spacing: 1px;
-            border: none;
-            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: var(--text-light);
+        }
+        
         .btn:hover {
-            background-color: var(--blue-light);
+            transform: translateY(-3px);
         }
 
-        /* Navbar */
+        .btn-primary:hover {
+            background-color: var(--light-blue);
+        }
+
+        /* --- 1. NAVBAR --- */
         .navbar {
             background-color: var(--bg-dark);
-            padding: 15px 0;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .navbar .container {
@@ -97,597 +109,421 @@
             align-items: center;
         }
 
-        .navbar .logo {
-            font-family: var(--font-heading);
-            font-size: 2.2em;
-            color: var(--white-light);
+        .navbar-logo {
+            font-family: var(--font-title);
+            font-size: 1.8rem;
             font-weight: 700;
-            letter-spacing: 1px;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+        
+        .navbar-logo span {
+            color: var(--primary-blue);
         }
 
-        .navbar .contact-info {
+        .navbar-phone {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--light-blue);
+            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 15px;
+        }
+        
+        .navbar-phone svg {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            fill: var(--light-blue);
         }
 
-        .navbar .contact-info a {
-            color: var(--white-light);
-            font-weight: 600;
-            font-size: 1.1em;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.3s ease;
-        }
-
-        .navbar .contact-info a:hover {
-            color: var(--blue-light);
-        }
-
-        .navbar .contact-info svg {
-            fill: var(--white-light);
-            width: 20px;
-            height: 20px;
-        }
-
-        .navbar .contact-info a:hover svg {
-            fill: var(--blue-light);
-        }
-
-        /* Hero Section */
+        /* --- 2. HERO --- */
         .hero {
-            background: linear-gradient(rgba(8, 9, 12, 0.7), rgba(8, 9, 12, 0.7)), url('https://images.unsplash.com/photo-1596541604084-2566191b9795?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
-            padding: 150px 0;
+            padding: 100px 0;
             text-align: center;
+            background: linear-gradient(rgba(8, 9, 12, 0.8), rgba(8, 9, 12, 1)), url('https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=2070') no-repeat center center;
+            background-size: cover;
         }
 
         .hero h1 {
-            font-size: 4.5em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
         }
 
         .hero p {
-            font-size: 1.5em;
-            margin-bottom: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            color: var(--white-light);
-            font-weight: 400;
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--text-light);
+            opacity: 0.9;
+        }
+        
+        .hero .btn svg {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
         }
 
-        .hero .btn {
-            padding: 18px 40px;
-            font-size: 1.3em;
+        /* --- 3. DORES (PROBLEMS) --- */
+        .problems-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
         }
 
-        /* General Section Styling */
-        section {
-            padding: 80px 0;
+        .problem-card {
+            background-color: #111318;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
             text-align: center;
         }
-
-        section h2 {
-            margin-bottom: 60px;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-            color: var(--blue-light);
-        }
-
-        section h2::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--blue-primary);
-            border-radius: 2px;
-        }
-
-        /* Dores Section */
-        .dores {
-            background-color: var(--bg-dark);
-        }
-
-        .dores-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .dor-item {
-            background-color: #1a1c20;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            text-align: left;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 5px solid var(--blue-primary);
-        }
-
-        .dor-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-        }
-
-        .dor-item h3 {
-            color: var(--blue-light);
-            margin-bottom: 15px;
-            font-size: 1.6em;
-        }
-
-        .dor-item p {
-            font-size: 1.1em;
-            color: var(--text-color);
-        }
-
-        /* Como Funciona Section */
-        .como-funciona {
-            background-color: #1a1c20;
-        }
-
-        .passos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .passo-item {
-            background-color: var(--bg-dark);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            position: relative;
-            padding-top: 60px;
-            border-bottom: 5px solid var(--blue-primary);
-        }
-
-        .passo-item .numero {
-            position: absolute;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--blue-primary);
-            color: var(--white-light);
+        
+        .problem-card svg {
             width: 50px;
             height: 50px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .problem-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* --- 4. COMO FUNCIONA (HOW IT WORKS) --- */
+        .how-it-works {
+            background-color: #111318;
+        }
+        
+        .steps-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            position: relative;
+        }
+
+        .step-card {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-blue);
+            color: var(--text-light);
             border-radius: 50%;
             display: flex;
-            justify-content: center;
             align-items: center;
-            font-size: 1.8em;
-            font-weight: 700;
-            font-family: var(--font-heading);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            justify-content: center;
+            font-family: var(--font-title);
+            font-size: 1.5rem;
+            margin: 0 auto 15px;
+            border: 3px solid var(--light-blue);
         }
-
-        .passo-item h3 {
-            color: var(--blue-light);
-            margin-bottom: 10px;
-            font-size: 1.8em;
+        
+        .step-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
         }
-
-        .passo-item p {
-            font-size: 1.1em;
-            color: var(--text-color);
-        }
-
-        /* Reviews Section */
-        .reviews {
-            background-color: var(--bg-dark);
-        }
-
+        
+        /* --- 5. AVALIAÇÕES (REVIEWS) --- */
         .reviews-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: 1fr;
+            gap: 25px;
         }
 
         .review-card {
-            background-color: #1a1c20;
+            background-color: #111318;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            text-align: left;
-            border-left: 5px solid var(--blue-light);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+        
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
         }
 
-        .review-card .stars {
+        .review-header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .review-header h3 {
+            font-size: 1.2rem;
+            font-family: var(--font-body);
+            font-weight: 500;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+        
+        .stars {
             color: var(--star-yellow);
-            margin-bottom: 15px;
-            font-size: 1.4em;
+            font-size: 1.2rem;
+        }
+        
+        .stars .grey {
+            color: #444;
+        }
+        
+        .google-info {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        .google-info a {
+            color: var(--light-blue);
+            text-decoration: none;
         }
 
-        .review-card p {
-            font-style: italic;
-            margin-bottom: 15px;
-            color: var(--text-color);
-        }
-
-        .review-card .author {
-            font-weight: 600;
-            color: var(--blue-light);
-        }
-
-        /* Bairros Atendidos Section */
-        .bairros-atendidos {
-            background-color: #1a1c20;
-        }
-
-        .bairros-atendidos ul {
-            list-style: none;
-            padding: 0;
+        /* --- 6. BAIRROS ATENDIDOS --- */
+        .areas-container {
             display: flex;
             flex-wrap: wrap;
+            gap: 15px;
             justify-content: center;
-            gap: 15px 30px;
-            margin-top: 40px;
         }
 
-        .bairros-atendidos li {
-            background-color: var(--bg-dark);
+        .area-tag {
+            background-color: #111318;
+            color: var(--text-light);
             padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1.1em;
-            font-weight: 600;
-            color: var(--blue-light);
-            border: 1px solid var(--blue-primary);
-            transition: background-color 0.3s ease, color 0.3s ease;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 1rem;
+        }
+        
+        .area-tag:hover {
+            background-color: var(--primary-blue);
+            border-color: var(--primary-blue);
         }
 
-        .bairros-atendidos li:hover {
-            background-color: var(--blue-primary);
-            color: var(--white-light);
+        /* --- 7. MAPA --- */
+        .map-section {
+            padding-bottom: 0;
         }
-
-        /* Mapa Section */
-        .mapa {
-            background-color: var(--bg-dark);
-        }
-
         .map-container {
+            position: relative;
             width: 100%;
             height: 450px;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-            margin-top: 40px;
+            border: 1px solid var(--border-color);
         }
 
         .map-container iframe {
             width: 100%;
             height: 100%;
-            border: 0;
+            border: none;
             filter: invert(90%) hue-rotate(180deg) saturate(0.7) brightness(0.85);
         }
 
-        /* CTA Final */
+        .radar-dot {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            background-color: var(--light-blue);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .radar-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            border: 2px solid var(--light-blue);
+            transform: translate(-50%, -50%);
+            animation: radar-expand 2s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
+            z-index: 1;
+        }
+
+        .radar-ring:nth-child(2) { animation-delay: 0.6s; }
+        .radar-ring:nth-child(3) { animation-delay: 1.2s; }
+
+        @keyframes radar-expand {
+            0% {
+                width: 0;
+                height: 0;
+                opacity: 0.8;
+            }
+            100% {
+                width: 300px;
+                height: 300px;
+                opacity: 1;
+            }
+        }
+        
+        /* --- 8. CTA FINAL --- */
         .cta-final {
-            background-color: var(--blue-primary);
-            padding: 80px 0;
             text-align: center;
-            border-top: 8px solid var(--blue-light);
         }
 
         .cta-final h2 {
-            color: var(--white-light);
-            font-size: 3.5em;
-            margin-bottom: 20px;
-        }
-
-        .cta-final h2::after {
-            background-color: var(--white-light);
-        }
-
-        .cta-final p {
-            font-size: 1.4em;
-            margin-bottom: 40px;
-            color: var(--white-light);
-            max-width: 800px;
+            font-size: 2.2rem;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
-
-        .cta-final .payment-methods {
+        
+        .payment-methods {
             margin-top: 30px;
-            font-size: 1.2em;
-            color: var(--white-light);
-            font-weight: 600;
+        }
+        
+        .payment-methods p {
+            font-family: var(--font-title);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .payment-icons span {
+            background: #111318;
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
         }
 
-        /* Footer */
+        /* --- 9. FOOTER --- */
         .footer {
-            background-color: var(--bg-dark);
-            color: var(--text-color);
-            padding: 40px 0;
+            background-color: #000;
+            padding: 30px 0;
             text-align: center;
-            border-top: 1px solid rgba(242, 244, 248, 0.1);
-            font-size: 0.9em;
+            font-size: 0.9rem;
         }
 
         .footer p {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+            opacity: 0.7;
+        }
+        
+        .footer a {
+            color: var(--light-blue);
+            text-decoration: none;
         }
 
-        .footer .social-links a {
-            margin: 0 10px;
-            color: var(--white-light);
-            font-size: 1.2em;
-            transition: color 0.3s ease;
-        }
-
-        .footer .social-links a:hover {
-            color: var(--blue-light);
-        }
-
-        .footer .address-info {
-            margin-top: 20px;
-            font-size: 1em;
-        }
-
-        .footer .address-info a {
-            color: var(--white-light);
-            text-decoration: underline;
-        }
-
-        .footer .address-info a:hover {
-            color: var(--blue-light);
-        }
-
-        .footer .developer {
-            margin-top: 30px;
-            font-size: 0.8em;
-            color: rgba(242, 244, 248, 0.7);
-        }
-
-        /* WhatsApp Floating Button */
+        /* --- 10. BOTÃO FLUTUANTE WHATSAPP --- */
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 25px;
+            right: 25px;
             background-color: #25D366;
-            color: var(--white-light);
-            border-radius: 50%;
+            color: white;
             width: 60px;
             height: 60px;
+            border-radius: 50%;
             display: flex;
-            justify-content: center;
             align-items: center;
-            font-size: 2em;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            z-index: 1000;
-            transition: transform 0.3s ease;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 100;
+            animation: pulse 2s infinite;
+            transition: transform 0.3s;
         }
-
+        
         .whatsapp-float:hover {
             transform: scale(1.1);
         }
 
         .whatsapp-float svg {
-            fill: var(--white-light);
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 35px;
         }
 
-        /* Pulse Animation */
         @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        .whatsapp-float {
-            animation: pulse 2s infinite;
+        /* --- MEDIA QUERIES (RESPONSIVIDADE) --- */
+        @media (min-width: 768px) {
+            h2 { font-size: 3rem; margin-bottom: 60px; }
+            .hero h1 { font-size: 4.5rem; }
+            .hero p { font-size: 1.5rem; }
+            .problems-grid { grid-template-columns: repeat(2, 1fr); }
+            .steps-container { grid-template-columns: repeat(4, 1fr); }
+            .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+            .cta-final h2 { font-size: 2.8rem; }
         }
-
-        /* Responsive Adjustments */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 3.5em;
-            }
-            .hero p {
-                font-size: 1.3em;
-            }
-            h2 {
-                font-size: 2.2em;
-            }
-            .navbar .logo {
-                font-size: 1.8em;
-            }
-            .navbar .contact-info a {
-                font-size: 1em;
-            }
-            .cta-final h2 {
-                font-size: 2.8em;
-            }
-            .cta-final p {
-                font-size: 1.2em;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar .container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .hero {
-                padding: 100px 0;
-            }
-            .hero h1 {
-                font-size: 2.8em;
-            }
-            .hero p {
-                font-size: 1.1em;
-            }
-            .btn {
-                padding: 12px 25px;
-                font-size: 1em;
-            }
-            section {
-                padding: 60px 0;
-            }
-            h2 {
-                font-size: 2em;
-            }
-            .dores-grid, .passos-grid, .reviews-grid {
-                grid-template-columns: 1fr;
-            }
-            .map-container {
-                height: 350px;
-            }
-            .cta-final h2 {
-                font-size: 2.2em;
-            }
-            .cta-final p {
-                font-size: 1em;
-            }
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-            }
-            .whatsapp-float svg {
-                width: 25px;
-                height: 25px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2.2em;
-            }
-            .hero p {
-                font-size: 1em;
-            }
-            .navbar .logo {
-                font-size: 1.5em;
-            }
-            .navbar .contact-info {
-                flex-direction: column;
-                gap: 8px;
-            }
-            .navbar .contact-info a {
-                font-size: 0.9em;
-            }
-            h2 {
-                font-size: 1.8em;
-            }
-            .dor-item h3, .passo-item h3 {
-                font-size: 1.4em;
-            }
-            .dor-item p, .passo-item p, .review-card p, .bairros-atendidos li {
-                font-size: 0.95em;
-            }
-            .cta-final h2 {
-                font-size: 1.8em;
-            }
-            .cta-final p {
-                font-size: 0.9em;
-            }
-            .footer p, .footer .address-info, .footer .developer {
-                font-size: 0.8em;
-            }
+        
+        @media (min-width: 1024px) {
+            .problems-grid { grid-template-columns: repeat(4, 1fr); }
         }
     </style>
 </head>
 <body>
 
+    <!-- 1. NAVBAR -->
     <header class="navbar">
         <div class="container">
-            <a href="#" class="logo">BL Caminhão Pipa</a>
-            <div class="contact-info">
-                <a href="tel:+5521964582324">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.22-3.57-.68-.1-.05-.21-.07-.32-.07-.11 0-.22.02-.33.06-.38.16-.83.38-1.28.61-1.07.54-2.06.87-3.04.87-1.07 0-2.06-.33-3.13-.87-.45-.23-.9-.45-1.28-.61-.11-.04-.22-.06-.33-.06-.11 0-.22.02-.32.07-.98.46-2.18.68-3.43.68-1.38 0-2.5-.56-2.5-1.5s1.12-1.5 2.5-1.5c1.25 0 2.45.22 3.57.68.1.05.21.07.32.07.11 0-.22-.02-.33-.06.38-.16.83-.38 1.28-.61 1.07-.54 2.06-.87 3.04-.87 1.07 0 2.06.33 3.13.87.45.23.9.45 1.28.61.11.04.22.06.33.06.11 0 .22-.02.32-.07.98-.46 2.18-.68 3.43-.68 1.38 0 2.5.56 2.5 1.5s-1.12 1.5-2.5 1.5zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM12 20c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
-                    +55 21 96458-2324
-                </a>
-            </div>
+            <a href="#" class="navbar-logo">BL <span>Caminhão Pipa</span></a>
+            <a href="tel:+5521964582324" class="navbar-phone">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"></path></svg>
+                (21) 96458-2324
+            </a>
         </div>
     </header>
 
     <main>
+        <!-- 2. HERO -->
         <section class="hero">
             <div class="container">
-                <h1>Cansado de Ficar Sem Água?</h1>
-                <p>Sua obra parada, piscina vazia ou caixa d'água seca? A BL Caminhão Pipa tem a solução rápida e eficiente para você no <strong>Rio de Janeiro e região</strong>.</p>
-                <a href="https://wa.me/5521964582324" class="btn">Solicite seu Orçamento Agora!</a>
+                <h1>Ficou sem água?</h1>
+                <p>Abastecimento de água potável com agilidade e segurança para o <strong>Rio de Janeiro e região metropolitana</strong>. Atendimento 24 horas para sua emergência.</p>
+                <a href="https://wa.me/5521964582324" target="_blank" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.52 3.48 1.47 4.95L2.05 22l5.25-1.52c1.41.83 3.02 1.32 4.74 1.32h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zM18 13.45c-.14-.24-.52-.4-1.01-.7-.49-.3-.52-.36-.78-.1-.26.26-.49.6-.6.7-.11.1-.2.13-.34.03-.14-.1-.92-.44-1.79-1.23-.68-.61-1.12-1.17-1.26-1.37-.14-.2-.02-.3.09-.41.1-.1.23-.26.34-.39.12-.13.16-.23.23-.39.07-.16.04-.3-.02-.41-.06-.11-.78-1.88-1.07-2.58-.29-.7-.58-.6-.78-.6h-.5c-.2 0-.46.1-.7.34-.24.24-.92.9-1.12 2.17-.2 1.27.24 2.47.76 3.3.52.83 1.82 2.44 4.32 3.63 2.5 1.19 2.97 1.12 3.51.92.54-.2.87-.94.98-1.18.11-.24.11-.45.07-.55z"></path></svg>
+                    Pedir Água Pelo WhatsApp
+                </a>
             </div>
         </section>
 
-        <section class="dores">
+        <!-- 3. SEÇÃO DE DORES -->
+        <section class="problems">
             <div class="container">
-                <h2>Não Deixe a Falta D'água Parar Você!</h2>
-                <div class="dores-grid">
-                    <div class="dor-item">
-                        <h3>Sua Obra Não Pode Parar</h3>
-                        <p>O atraso no cronograma por falta de água é um prejuízo que você não pode ter. Garanta o abastecimento contínuo para sua construção.</p>
+                <h2>Seu problema, <span>Nossa Solução</span></h2>
+                <div class="problems-grid">
+                    <div class="problem-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 21h22L12 2zm0 4.62L17.52 18H6.48L12 6.62zM13 14h-2v-2h2v2zm0 4h-2v-2h2v2z"></path></svg>
+                        <h3>Emergência 24h</h3>
+                        <p>A água acabou de madrugada ou no feriado? Conte com nosso plantão 24 horas para resolver seu problema a qualquer momento.</p>
                     </div>
-                    <div class="dor-item">
-                        <h3>Piscina Vazia? Não Mais!</h3>
-                        <p>Prepare-se para o lazer sem preocupações. Enchemos sua piscina com água de qualidade, de forma rápida e prática.</p>
+                    <div class="problem-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L2 12h3v8h14v-8h3L12 3zm7 15h-2v-6h-2v6H9v-6H7v6H5v-6.3l7-6.3 7 6.3V18z"></path></svg>
+                        <h3>Falta em Casa</h3>
+                        <p>Não deixe sua família sem água para as tarefas essenciais. Abastecemos sua caixa d'água com rapidez e água de qualidade.</p>
                     </div>
-                    <div class="dor-item">
-                        <h3>Jardim Seco? Temos a Solução.</h3>
-                        <p>Mantenha seu paisagismo exuberante. Oferecemos água para irrigação, garantindo a vitalidade do seu jardim ou plantação.</p>
+                    <div class="problem-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"></path></svg>
+                        <h3>Condomínios</h3>
+                        <p>Garantimos o abastecimento contínuo para condomínios residenciais e comerciais, evitando transtornos para os moradores.</p>
                     </div>
-                    <div class="dor-item">
-                        <h3>Falta D'água em Casa ou Empresa?</h3>
-                        <p>Não espere a concessionária. Abastecimento emergencial para residências, condomínios e empresas, 24 horas por dia.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="como-funciona">
-            <div class="container">
-                <h2>Como Funciona Nosso Serviço?</h2>
-                <div class="passos-grid">
-                    <div class="passo-item">
-                        <div class="numero">1</div>
-                        <h3>Contato Rápido</h3>
-                        <p>Ligue ou chame no WhatsApp. Estamos prontos para atender sua demanda a qualquer momento.</p>
-                    </div>
-                    <div class="passo-item">
-                        <div class="numero">2</div>
-                        <h3>Orçamento Personalizado</h3>
-                        <p>Receba uma proposta clara e justa, adaptada à sua necessidade e volume de água solicitado.</p>
-                    </div>
-                    <div class="passo-item">
-                        <div class="numero">3</div>
-                        <h3>Agendamento Flexível</h3>
-                        <p>Escolha o melhor dia e horário para a entrega. Nos adaptamos à sua conveniência.</p>
-                    </div>
-                    <div class="passo-item">
-                        <div class="numero">4</div>
-                        <h3>Entrega Eficiente</h3>
-                        <p>Nossa equipe entrega água potável com segurança e agilidade, diretamente no seu local.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="reviews">
-            <div class="container">
-                <h2>O Que Nossos Clientes Dizem</h2>
-                <div class="reviews-grid">
-                    <div class="review-card">
-                        <div class="stars">★★★★★</div>
-                        <p>"Serviço impecável! Precisava de água urgente para minha obra e a BL Caminhão Pipa atendeu prontamente. Recomendo!"</p>
-                        <div class="author">João Silva - Engenheiro</div>
+                    <div class="problem-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V6H7v4.5l-3 3V20h16v-6.5l-3-3zM15 18h-2v-2h2v2zm0-4h-2v-2h2v2
 </body>
 </html>
